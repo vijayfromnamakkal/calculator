@@ -55,6 +55,8 @@ pipeline {
                                             name: 'Config')
                        ])
 		   }
+	          echo "Env jsfsjaffwef:"+userInput) //this works
+                  echo "${userInput}"
 		 sh "docker login --username ksvijaynkl --password ${userInput.Config}"
                  sh 'docker push ksvijaynkl/calculator'
                }
@@ -72,6 +74,12 @@ pipeline {
                 sh 'chmod +x acceptance_test.sh && ./acceptance_test.sh'
                }
              }
+	     
+	     post {
+              always {
+               sh 'docker stop calculator'
+              }
+            }
    
      }
    }
