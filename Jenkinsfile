@@ -12,7 +12,7 @@ pipeline {
                                             name: 'Config')
                        ])
 		   }
-	          sh "echo user Input is "+userInput.Config
+		  sh "echo user Input is ${userInput.Config}
                   sh './gradlew compileJava'
                }
           }
