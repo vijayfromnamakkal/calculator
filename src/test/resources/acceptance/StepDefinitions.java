@@ -31,6 +31,7 @@ public class StepDefinitions {
 
     @Then('^I receive (.*) as a result$')
     public void i_receive_as_a_result(String expectedResult) throws Throwable {
+        System.out.println("cucumber test commpleted");
         assertEquals(expectedResult, result);
     }
 }
