@@ -12,9 +12,8 @@ pipeline {
                                             name: 'Config')
                        ])
 		   }
-	          echo "Env jsfsjaffwef:"+userInput //this works
-                  echo "${userInput}"
-                    sh './gradlew compileJava'
+	          sh "echo user Input is "+userInput.Config
+                  sh './gradlew compileJava'
                }
           }
           stage('Unit test') {
