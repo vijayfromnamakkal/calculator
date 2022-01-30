@@ -3,16 +3,8 @@ pipeline {
      stages {
           stage('Compile') {
                steps {
-		       script {
-		      def userInput = input(
-                            id: 'userInput', message: 'Enter password',
-                            parameters: [
-                                    string(defaultValue: 'None',description: 'Password for dockerhub',name: 'config')
-                       ])		  
-		 
-                  sh './gradlew compileJava'
-			 }
-               }
+		       sh './gradlew compileJava'
+                  }
           }
           stage('Unit test') {
                steps {
@@ -58,15 +50,12 @@ pipeline {
 		      def userInput = input(
                             id: 'userInput', message: 'Enter password',
                             parameters: [
-                                    string(defaultValue: 'None',
-                                            description: 'Path of config file',
-                                            name: 'Config')
-                       ])
-		   }
-	          echo "Env jsfsjaffwef:"+userInput //this works
-                  echo "${userInput}"
-		 sh "docker login --username ksvijaynkl --password ${userInput.Config}"
-                 sh 'docker push ksvijaynkl/calculator'
+                                    string(defaultValue: 'None',  description: 'Password for docker hub', name: 'Config')
+                       ])   
+	          
+		      sh "docker login --username ksvijaynkl --password $userInput"
+                      sh 'docker push ksvijaynkl/calculator
+	         }
                }
              }
 	     
