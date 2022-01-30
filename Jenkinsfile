@@ -54,7 +54,7 @@ pipeline {
                        ])   
 	          
 		      sh "docker login --username ksvijaynkl --password $userInput"
-                      sh 'docker push ksvijaynkl/calculator
+                      sh 'docker push ksvijaynkl/calculator'
 	         }
                }
              }
