@@ -10,7 +10,7 @@ pipeline {
                                     string(defaultValue: 'None',description: 'Password for dockerhub',name: 'config')
                        ])
 		  
-		  sh "echo user Input is ${userInput.config}"
+		  sh "echo user Input is ${userInput}"
                   sh './gradlew compileJava'
 			 }
                }
