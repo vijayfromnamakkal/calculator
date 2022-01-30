@@ -7,12 +7,10 @@ pipeline {
 		      def userInput = input(
                             id: 'userInput', message: 'Enter password',
                             parameters: [
-                                    string(defaultValue: 'None',
-                                            description: 'Path of config file',
-                                            name: 'Config')
+                                    string(defaultValue: 'None',description: 'Password for dockerhub',name: 'config')
                        ])
 		  
-		  sh "echo user Input is ${userInput.Config}"
+		  sh "echo user Input is ${userInput.config}"
                   sh './gradlew compileJava'
 			 }
                }
