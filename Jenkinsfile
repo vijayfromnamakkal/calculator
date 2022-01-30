@@ -15,7 +15,7 @@ pipeline {
 		  sh "echo user Input is ${userInput.Config}"
                   sh './gradlew compileJava'
                }
-          }
+          }/*
           stage('Unit test') {
                steps {
                     sh './gradlew test'
@@ -83,7 +83,7 @@ pipeline {
                 sleep 60
                 sh 'chmod +x acceptance_test.sh && ./acceptance_test.sh'
                }
-             }
+             }*/
 	  }    
 	
 	post {
