@@ -8,13 +8,12 @@ pipeline {
                             id: 'userInput', message: 'Enter password',
                             parameters: [
                                     string(defaultValue: 'None',description: 'Password for dockerhub',name: 'config')
-                       ])
-		  
-		  sh "echo user Input is ${userInput}"
+                       ])		  
+		 
                   sh './gradlew compileJava'
 			 }
                }
-          }/*
+          }
           stage('Unit test') {
                steps {
                     sh './gradlew test'
@@ -82,14 +81,14 @@ pipeline {
                 sleep 60
                 sh 'chmod +x acceptance_test.sh && ./acceptance_test.sh'
                }
-             }*/
+             }
 	  }    
-	/*
+	
 	post {
           always {
             sh 'docker stop calculator'
             }
           }
-   */
+   
     
    }
