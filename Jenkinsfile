@@ -55,7 +55,7 @@ pipeline {
                                             name: 'Config')
                        ])
 		   }
-		 sh 'docker login --username ksvijaynkl --password ${userInput.Config}'
+		 sh "docker login --username ksvijaynkl --password ${userInput.Config}"
                  sh 'docker push ksvijaynkl/calculator'
                }
              }
