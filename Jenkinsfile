@@ -46,14 +46,15 @@ pipeline {
 	     
 	     stage('Docker push') {
 		 steps {
-		   def userInput = input(
+	           script {
+		      def userInput = input(
                             id: 'userInput', message: 'Enter password',
                             parameters: [
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config')
-                    ])
-              
+                       ])
+		   }
 		 sh 'docker login --username ksvijaynkl --password ${userInput.Config}'
                  sh 'docker push ksvijaynkl/calculator'
                }
