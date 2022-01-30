@@ -31,6 +31,18 @@ pipeline {
           	    ])
                     sh './gradlew jacocoTestCoverageVerification'
                     }
-	           }
+	       }
+	   stage('Package') {
+              steps {
+                sh './gradlew build'
+              }
+           }
+	     
+	   stage('Docker build') {
+             steps {
+               sh 'docker build -t leszko/calculator .'
+             }
           }
+   
      }
+   }
