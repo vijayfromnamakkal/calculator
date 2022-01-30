@@ -11,9 +11,10 @@ pipeline {
                                             description: 'Path of config file',
                                             name: 'Config')
                        ])
-		   }
+		  
 		  sh "echo user Input is ${userInput.Config}"
                   sh './gradlew compileJava'
+			 }
                }
           }/*
           stage('Unit test') {
