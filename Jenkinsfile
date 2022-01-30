@@ -43,6 +43,12 @@ pipeline {
                sh 'docker build -t ksvijaynkl/calculator .'
              }
           }
+	     
+	     stage('Docker push') {
+               steps {
+                 sh 'docker push ksvijaynkl/calculator'
+               }
+             }
    
      }
    }
