@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: calculator
-        image: ksvijaynkl/calculator
+        image: ksvijaynkl/calculator:caching
         ports:     
         - containerPort: 8080
         readinessProbe:
