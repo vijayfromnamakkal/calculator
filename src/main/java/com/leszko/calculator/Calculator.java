@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 public class Calculator {
 	@Cacheable("sum")
 	public int sum(int a, int b) {
+		try {
+         Thread.sleep(10000);
+      }
+      catch (InterruptedException e) {
+         e.printStackTrace();
+      }
+
 		return a + b;
 	}
 }
