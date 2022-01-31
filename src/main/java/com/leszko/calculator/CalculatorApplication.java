@@ -19,10 +19,10 @@ public class CalculatorApplication {
 		SpringApplication.run(CalculatorApplication.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public ClientConfig hazelcastClientConfig() {
 		ClientConfig clientConfig = new ClientConfig();
 		clientConfig.getNetworkConfig().addAddress("hazelcast");
 		return clientConfig;
-	}*/
+	}
 }
