@@ -1,6 +1,6 @@
 package com.leszko.calculator;
 
-//import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.client.config.ClientConfig;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
