@@ -25,7 +25,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation('io.cucumber:cucumber-java:4.2.6')
         testImplementation('io.cucumber:cucumber-junit:4.2.6')
-	testImplementation("io.cucumber:cucumber-junit-platform-engine:4.2.6")
+	testImplementation("io.cucumber:cucumber-junit-platform-engine:5.0.0")
 	implementation 'com.hazelcast:hazelcast-all:3.12'
 
 }
